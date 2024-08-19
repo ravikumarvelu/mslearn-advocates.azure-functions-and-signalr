@@ -15,7 +15,8 @@
     "license": "ISC",
     "dependencies": {
         "@azure/cosmos": "^4.0.0",
-        "dotenv": "^16.4.5"
+        "dotenv": "^16.4.5",
+        "setup": "file:"
     },
     "devDependencies": {
         "@types/node": "^20.11.30",
