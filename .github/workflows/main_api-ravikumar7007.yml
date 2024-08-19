@@ -36,13 +36,13 @@ jobs:
           npm run test --if-present
           popd
 
-          - name: Zip artifact for deployment
-          run: |
-            pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/${{ env.PACKAGE_PATH }}'
-            zip -r release.zip .
-            popd
-            cp ./${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/${{ env.PACKAGE_PATH }}/release.zip ./release.zip
-            
+      - name: Zip artifact for deployment
+        run: |
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/${{ env.PACKAGE_PATH }}'
+          zip -r release.zip .
+          popd
+          cp ./${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/${{ env.PACKAGE_PATH }}/release.zip ./release.zip
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
